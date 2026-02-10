@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+class SumOfArray 
+{
+    public static void main(String[] args) 
+   {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Read size of array
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        // Declare array
+        int[] arr = new int[n];
+        int sum = 0;
+
+        // Read array elements
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            sum = sum + arr[i];
+        }
+
+        // Print sum
+        System.out.println("Sum = " + sum);
+    }
+}
