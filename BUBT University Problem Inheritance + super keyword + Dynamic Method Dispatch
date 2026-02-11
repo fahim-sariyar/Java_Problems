@@ -1,0 +1,46 @@
+// Parent Class
+class Football {
+    protected double radius;
+    protected double weight;
+
+    // Constructor
+    public Football(double radius, double weight) {
+        this.radius = radius;
+        this.weight = weight;
+    }
+
+    // Display method
+    public void display() {
+        System.out.println("Radius: " + radius);
+        System.out.println("Weight: " + weight);
+    }
+}
+
+// Child Class
+class FootballColor extends Football {
+    private String color;
+
+    // Constructor
+    public FootballColor(double radius, double weight, String color) {
+        super(radius, weight);   // calling parent constructor
+        this.color = color;
+    }
+
+    // Overriding display method
+    @Override
+    public void display() {
+        super.display();   // print radius & weight
+        System.out.println("Color: " + color);
+    }
+}
+
+// Main Class
+public class Test1 {
+    public static void main(String[] args) {
+
+        // Dynamic Method Dispatch
+        Football f = new FootballColor(11.5, 450, "Black & White");
+
+        f.display();   // calls child class display()
+    }
+}
