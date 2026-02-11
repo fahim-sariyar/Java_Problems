@@ -1,0 +1,61 @@
+// Abstract Class
+abstract class Box {
+
+    // Abstract method
+    abstract double area();
+}
+
+// Rectangle Class
+class Rectangle extends Box {
+    private double length;
+    private double height;
+
+    // Constructor
+    public Rectangle(double length, double height) {
+        this.length = length;
+        this.height = height;
+    }
+
+    // Override area
+    @Override
+    double area() {
+        return length * height;
+    }
+
+    // Increment functions
+    public Rectangle Lincrement(double value) {
+        length += value;
+        return this;
+    }
+
+    public Rectangle Hincrement(double value) {
+        height += value;
+        return this;
+    }
+
+    // Decrement functions
+    public Rectangle Ldecrement(double value) {
+        length -= value;
+        return this;
+    }
+
+    public Rectangle Hdecrement(double value) {
+        height -= value;
+        return this;
+    }
+}
+
+// Test Class
+public class Test2 {
+    public static void main(String[] args) {
+
+        Rectangle r = new Rectangle(10, 5);
+
+        r.Lincrement(2);
+        r.Hincrement(3);
+        r.Ldecrement(1);
+        r.Hdecrement(1);
+
+        System.out.println("Final Area of Box: " + r.area());
+    }
+}
