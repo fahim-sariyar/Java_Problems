@@ -1,1 +1,37 @@
-class Box implements Cloneable { double width; double height; double depth; // Constructor when all dimensions specified Box(double w, double h, double d) { width = w; height = h; depth = d; } // Copy constructor Box(Box ob) { width = ob.width; height = ob.height; depth = ob.depth; } // Default constructor Box() { width = -1; height = -1; depth = -1; } // Constructor for cube Box(double len) { width = height = depth = len; } // Method to calculate volume double volume() { return width * height * depth; } }
+class Box implements Cloneable {
+
+    double width;
+    double height;
+    double depth;
+
+    // Constructor when all dimensions specified
+    Box(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    // Copy constructor
+    Box(Box ob) {
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
+
+    // Default constructor
+    Box() {
+        width = -1;
+        height = -1;
+        depth = -1;
+    }
+
+    // Constructor for cube
+    Box(double len) {
+        width = height = depth = len;
+    }
+
+    // Method to calculate volume
+    double volume() {
+        return width * height * depth;
+    }
+}
