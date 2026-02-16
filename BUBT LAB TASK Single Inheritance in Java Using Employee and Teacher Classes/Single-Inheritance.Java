@@ -1,0 +1,62 @@
+import java.util.Scanner;
+ 
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+
+        Scanner sc= new Scanner(System.in);
+        Teacher t1= new Teacher();
+
+        System.out.print("Enter Employee ID: ");
+        //user input 1
+        t1.employeeId= sc.nextInt();
+        sc.nextLine(); 
+        
+        
+        System.out.print("Enter Employee Name: ");
+         //user input 1
+        t1.name = sc.nextLine();
+
+        System.out.print("Enter Subject Name: ");
+         //user input 1
+        t1.subjectName= sc.nextLine();
+
+        System.out.print("Enter Number of Classes Per Week: ");
+        //user input 1
+        t1.numberOfClassPerWeek = sc.nextInt();
+
+        System.out.println("\n--- Information ---");
+        t1.displayTeacherInfo();
+
+        sc.close();
+    }
+}
+
+
+
+class Employee 
+{ 
+    int employeeId; 
+    String name; 
+    void displayEmployeeInfo()
+    { 
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Name: " + name);
+    }
+    
+}
+
+class Teacher extends Employee 
+{ 
+    String subjectName; 
+    int numberOfClassPerWeek;
+    
+    void displayTeacherInfo() 
+    { 
+        // Parent class method call 
+        displayEmployeeInfo(); 
+        System.out.println("Subject Name: " + subjectName); 
+        System.out.println("Classes per Week: " + numberOfClassPerWeek); 
+    }
+}
