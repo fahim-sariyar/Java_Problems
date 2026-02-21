@@ -52,6 +52,7 @@ Method:
 ## 📌 Example Output
 Patient ID: 101
 Patient Name: Fahim Sariyar
+#
 Doctor ID: 1
 Doctor Name: Dr. Karim
 Specialization: Cardiology
