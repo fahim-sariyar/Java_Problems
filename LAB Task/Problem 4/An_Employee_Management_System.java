@@ -1,0 +1,61 @@
+// Base Class
+class Employee {
+    int empId;
+    double basicSalary;
+    // Constructor
+    public Employee(int empId, double basicSalary) {
+        this.empId = empId;
+        this.basicSalary = basicSalary;
+    }
+    // Method
+    public double calculateSalary() {
+        return basicSalary;
+    }
+}
+// Intermediate Class
+class Manager extends Employee {
+    double managementAllowance;
+    // Constructor
+    public Manager(int empId, double basicSalary, double managementAllowance) {
+        super(empId, basicSalary);  // Call parent constructor
+        this.managementAllowance = managementAllowance;
+    }
+    // Overriding method
+    @Override
+    public double calculateSalary() {
+        return basicSalary + managementAllowance;
+    }
+}
+// Derived Class
+class SeniorManager extends Manager {
+    double performanceBonus;
+
+    // Constructor
+    public SeniorManager(int empId, double basicSalary, 
+                         double managementAllowance, double 
+performanceBonus) {
+        super(empId, basicSalary, managementAllowance); // Call parent constructor
+        this.performanceBonus = performanceBonus;
+    }
+    // Overriding method
+    public double calculateSalary() {
+        return basicSalary + managementAllowance + performanceBonus;
+    }
+}
+// Runtime Polymorphism Class
+class PayrollService {
+    public void generatePayroll(Employee e) {
+        double totalSalary = e.calculateSalary();
+        System.out.println("Total Salary: " + totalSalary);
+    }
+}
+// Main Class
+public class Main {
+    public static void main(String[] args) {
+        // Upcasting
+        Employee e = new SeniorManager(101, 50000, 10000, 15000);
+        PayrollService service = new PayrollService();
+        service.generatePayroll(e);
+    }
+}
+
