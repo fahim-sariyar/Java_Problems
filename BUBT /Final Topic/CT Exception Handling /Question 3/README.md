@@ -3,9 +3,15 @@ The system should ensure that the withdrawal amount is not negative and does not
 
 ### Expected Output: 
 Current balance: 5000
+
 Withdrawing: 2000
+
 Withdrawal successful! Remaining balance: 3000
+
 Withdrawing: -500
+
 Invalid amount entered.
+
 Withdrawing: 7000
+
 Exception caught: Insufficient balance.
