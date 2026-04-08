@@ -1,0 +1,40 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.util.Scanner;
+import java.io.IOException;
+
+public class FileWritingT {
+    public static void main(String[] args) {
+
+        try (Scanner sc = new Scanner(System.in)) {
+
+            String path = System.getProperty("user.dir");
+            System.out.println("Current Working Directory:");
+            System.out.println(path);
+
+            System.out.print("Enter full file path: ");
+           String Filename= sc.nextLine();
+
+            File file = new File(Filename);
+
+            try {
+                if (!file.exists()) {
+                    file.createNewFile();
+                    System.out.println("File created!");
+                }
+
+                System.out.print("Enter a line to write in file: ");
+                String line = sc.nextLine();
+
+                try (FileWriter writer = new FileWriter(file, true)) {
+                    writer.write(line + "\n");
+                }
+
+                System.out.println("Data written successfully!");
+
+            } catch (IOException e) {
+                System.out.println("Error occurred!");
+            }
+        } // <-- এই closing bracket missing ছিল
+    }
+}
